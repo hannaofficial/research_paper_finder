@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## About Myself
+
+This project is about finding good research paper using gemini flash model and save it to your local storage
+You can try it by foolowing below details
+
+
+
+
 ## Getting Started
 
 First, run the development server:
