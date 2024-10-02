@@ -20,8 +20,8 @@ const Sidebar = () => {
 
     return (
         
-        <div className={` sticky top-0 min-h-screen w-1/6  h-full overflow-hidden  transition-all duration-800 ease-in-out ${isSidebarVisible ? 'translate-x-0 w-1/6  bg-[#202222] border-r border-b border-neutral-600' : 'translate-x-[-25%] border-r bg-[#1b1d1d] border-neutral-800 w-[4rem]'}`}> 
-            <div className='flex justify-end pt-4 text-neutral-400 '>
+        <div className={` sticky top-0 min-h-screen w-1/6  h-full overflow-hidden  transition-all duration-800 ease-in-out ${isSidebarVisible ? 'translate-x-0 w-1/6   sm:bg-[#202222] border-r sm:border-b sm:border-neutral-600 border-transparent' : 'translate-x-[-25%] sm:border-r sm:bg-[#1b1d1d] sm:border-neutral-800 w-[4rem] border-transparent'}`}> 
+            <div className=' justify-end pt-4 hidden sm:flex text-neutral-400 '>
                 <button onClick={toggleSidebar} className='transition-all duration-700 ease-in-out'>
                     {isSidebarVisible?<IoArrowBack className='w-8 h-8 mr-4'/>:<GrLinkNext className='w-6 h-6 mr-4'/>}
                     
@@ -31,23 +31,23 @@ const Sidebar = () => {
             
                 <div className='flex flex-col justify-evenly ml-6 mt-6 h-full  '>
                 <Link href='/'>
-                    <p className='font-medium text-2xl text-neutral-400 flex gap-8 mb-4 items-center hover:text-blue-400 transition-all duration-300 '>
+                    <p className='font-medium text-base lg:text-xl mx-1 sm:mx-0 text-neutral-400 flex gap-0 sm:gap-2 lg:gap-8 mb-4 items-center hover:text-blue-400 transition-all duration-300 '>
                         
-                          <span><RiHome2Line className='w-6 h-6'/></span>Home
+                          <span><RiHome2Line className='w-6 h-6 sm:w-6 sm:h-6'/></span><span className='hidden sm:block'>Home</span>
                         
                     </p>
                     </Link>
                     <Link href='/bookmark'>
-                        <p className='font-medium text-2xl text-neutral-400 flex gap-8 mb-4 items-center hover:text-blue-400 transition-all duration-300'>
+                        <p className='font-medium text-base lg:text-xl mx-1 sm:mx-0 text-neutral-400 flex  gap-0 sm:gap-2 lg:gap-8 mb-4 items-center hover:text-blue-400 transition-all duration-300'>
                         
-                            <span><GoBookmark className='w-6 h-6'/></span>Bookmark
+                            <span><GoBookmark className='w-6 h-6 sm:w-6 sm:h-6'/></span><span className='hidden sm:block'>Bookmark</span>
                             
                         </p>
                     </Link>
                     <Link href='/about'>
-                        <p className='font-medium text-2xl text-neutral-400 flex gap-8 items-center hover:text-blue-400 transition-all duration-300'>
+                        <p className='font-medium text-base lg:text-xl mx-1 sm:mx-0 text-neutral-400 flex gap-0 sm:gap-2 lg:gap-8 items-center hover:text-blue-400 transition-all duration-300'>
                         
-                            <span><TbCameraSelfie className='w-6 h-6'/></span>About
+                            <span><TbCameraSelfie className='w-6 h-6 sm:w-6 sm:h-6'/></span><span className='hidden sm:block'>About</span>
                             
                         </p>
                     </Link>

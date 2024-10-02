@@ -84,12 +84,12 @@ function ResearchCard({ paper,onDelete }) {
     <div  className="relative mb-4 p-6 text-neutral-300 border border-neutral-600 h-full   bg-[#202222]   rounded shadow-md"> 
        <div className='flex flex-col justify-between  h-full'>
             <div>
-                <h3 className="font-mono font-bold text-lg mb-4">{paper.name}</h3>
-                <div className="mt-2 text-sm">
-                    <p className='font-mono'><span className='font-mono font-semibold text-base'>Authors:</span> {paper.author}</p>
-                    <p className='font-mono '><span className='font-mono font-semibold text-base'>Published:</span> {paper.published_date}</p>
+                <h3 className="font-mono font-bold text-base sm:text-lg mb-4">{paper.name}</h3>
+                <div className="mt-2 text-xs sm:text-sm">
+                    <p className='font-mono'><span className='font-mono font-semibold text-xs sm:text-base'>Authors:</span> {paper.author}</p>
+                    <p className='font-mono '><span className='font-mono font-semibold text-xs sm:text-base'>Published:</span> {paper.published_date}</p>
                     
-                    <p className='font-mono '><span className='font-mono font-semibold text-base'>Overview:</span> {truncateLetters(paper.importance,300)}</p>
+                    <p className='font-mono '><span className='font-mono font-semibold text-xs sm:text-base'>Overview:</span> {truncateLetters(paper.importance,300)}</p>
                     {error && (
                           <p className="text-red-500 text-sm mt-2">{error}</p>
                         )}
@@ -117,16 +117,16 @@ function ResearchCard({ paper,onDelete }) {
           onClick={handleDeleteClick} disabled={isLoading}
           className={`transition-opacity ${isLoading ? 'opacity-50' : ''}`}
         >
-          <RiDeleteBin6Line className='w-6 h-6 text-neutral-400 hover:text-red-400' />
+          <RiDeleteBin6Line className='sm:w-6 sm:h-6 w-4 h-4 text-neutral-400 hover:text-red-400' />
         </button>:<button 
               onClick={handleBookmarkClick} 
               disabled={isLoading}
               className={`transition-opacity ${isLoading ? 'opacity-50' : ''}`}
             >
               {isBookmarked ? (
-                <GoBookmarkFill className='w-6 h-6 text-blue-400' />
+                <GoBookmarkFill className='sm:w-6 sm:h-6 w-4 h-4 text-blue-400' />
               ) : (
-                <GoBookmark className='w-6 h-6 hover:text-blue-400' />
+                <GoBookmark className='sm:w-6 sm:h-6 w-4 h-4 hover:text-blue-400' />
               )}
             </button>}
       </div>

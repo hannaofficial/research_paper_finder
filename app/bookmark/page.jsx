@@ -41,9 +41,9 @@ export default function BookmarkList() {
   if (error) return <div>Error: {error}</div>;
   if (loading) return <div className='flex justify-center items-center min-h-screen'><ImSpinner2 className='w-12 h-12 animate-spin text-neutral-400'/></div>
   return (
-    <div className='flex flex-col items-center justify-center max-w-[70%]  mx-auto mt-20'>
+    <div className='flex flex-col items-center justify-center max-w-[100%] sm:max-w-[70%]  mx-auto mt-20'>
       {bookmarks.length >0 && <h1 className='text-2xl mb-8'>Your saved bookmarks</h1>}
-    {bookmarks.length == 0 ?<h1 className='text-2xl mb-8 flex justify-center items-center'>Your saved no bookmarks</h1>:<div className=" gap-6  w-full">
+    {bookmarks.length == 0 ?<h1 className='text-xl sm:text-2xl mb-8 flex justify-center items-center'>Your saved no bookmarks</h1>:<div className=" gap-6  w-full">
           {
             bookmarks.map((bookmark, index) => (
               <div

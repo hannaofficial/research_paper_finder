@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiSearch } from 'react-icons/fi';
 import ResearchCard from './components/researchCard';
-import { useSidebar } from './Globalcontext';
-import loadingHome from './components/loadingHome';
+
 
 import Skeleton from 'react-loading-skeleton';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const DEFAULT_QUESTION = " CRISPR";
+const DEFAULT_QUESTION = "TRANSFORMER";
 
 export default function Home() {
   const [question, setQuestion] = useState(DEFAULT_QUESTION);
@@ -67,7 +66,7 @@ export default function Home() {
         className={`max-w-[60%] flex flex-col ${isFormShifted ? 'mt-6' : 'mt-40'} items-center transition-all duration-500 ease-in-out`}
         style={{ transitionProperty: 'margin-top' }}
       >
-            <h1 className="text-3xl font-medium mb-8 tracking-wider">Journey into the depths</h1>
+            <h1 className="text-xl sm:text-3xl font-medium mb-8 tracking-wider">Start by searching transformer</h1>
               <form onSubmit={handleSubmit} className="mb-4">
                   
                     <div className="relative">
@@ -76,7 +75,7 @@ export default function Home() {
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
                         placeholder="Ex: Transformer in deep learning"
-                        className="w-[50rem] p-4 pr-12 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
+                        className=" w-[20rem]  sm:w-[30rem] md:w-[40rem] lg:w-[50rem] p-4 pr-12 h-10 sm:h-14 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
                         <button
@@ -105,7 +104,7 @@ export default function Home() {
            
               {isLoading && (
                 
-                <div className={`flex flex-col justify-center items-center gap-6   w-full ${isLoading ? 'opacity-1 visible' : 'opacity-0 hidden'} transition-opacity duration-500 ease-in-out`} style={{transitionProperty:'visibility'}}>
+                <div className={`flex flex-col justify-center items-center gap-6  w-1/2 sm:w-full ${isLoading ? 'opacity-1 visible' : 'opacity-0 hidden'} transition-opacity duration-500 ease-in-out`} style={{transitionProperty:'visibility'}}>
                       <div className='grid gap-6 '>
                           <div className='  rounded-md'>
                             <Skeleton height={180} width={1200}  />
@@ -132,7 +131,7 @@ export default function Home() {
             )}
             {answer && (
       <div className="mt-10 w-4/5 h-full mx-auto">
-        <h2 className={`text-xl font-mono mb-6 ${showAnswers ? 'opacity-100':'opacity-0'} transition-all duration-500 ease-out`} style={{
+        <h2 className={`text-sm sm:text-xl font-mono mb-6 ${showAnswers ? 'opacity-100':'opacity-0'} transition-all duration-500 ease-out`} style={{
                   transitionProperty:'opacity', 
                 }}>
           {answer.error ? '' : 'Here are some of the papers you can go through:'}
