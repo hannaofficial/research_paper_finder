@@ -102,10 +102,8 @@ export default function Home() {
             </div>
 
 
-            <button className='' onClick={toggleFormPosition}>
-                          Click
-              </button>
-              {isLoading ? (
+           
+              {isLoading && (
                 
                 <div className={`flex flex-col justify-center items-center gap-6   w-full ${isLoading ? 'opacity-1 visible' : 'opacity-0 hidden'} transition-opacity duration-500 ease-in-out`} style={{transitionProperty:'visibility'}}>
                       <div className='grid gap-6 '>
@@ -124,9 +122,7 @@ export default function Home() {
                    
                    
                
-      ) : (
-        <div> Nothing </div>
-      )}
+      ) }
 
             
             {error && (
