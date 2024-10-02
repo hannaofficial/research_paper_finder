@@ -9,7 +9,7 @@ import Skeleton from 'react-loading-skeleton';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const DEFAULT_QUESTION = "TRANSFORMER";
+const DEFAULT_QUESTION = "";
 
 export default function Home() {
   const [question, setQuestion] = useState(DEFAULT_QUESTION);
@@ -66,7 +66,7 @@ export default function Home() {
         className={`max-w-[60%] flex flex-col ${isFormShifted ? 'mt-6' : 'mt-40'} items-center transition-all duration-500 ease-in-out`}
         style={{ transitionProperty: 'margin-top' }}
       >
-            <h1 className="text-xl sm:text-3xl font-medium mb-8 tracking-wider">Start by searching transformer</h1>
+            <h1 className="text-xl sm:text-3xl font-medium mb-8 tracking-wider">Start by searching a topic</h1>
               <form onSubmit={handleSubmit} className="mb-4">
                   
                     <div className="relative">
@@ -74,7 +74,7 @@ export default function Home() {
                         type="text"
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
-                        placeholder="Ex: Transformer in deep learning"
+                        placeholder="Ex: gpt"
                         className=" w-[20rem]  sm:w-[30rem] md:w-[40rem] lg:w-[50rem] p-4 pr-12 h-10 sm:h-14 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
