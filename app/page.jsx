@@ -168,7 +168,7 @@ export default function Home() {
         <h2 className={`text-sm sm:text-xl font-mono mb-6 ${showAnswers ? 'opacity-100':'opacity-0'} transition-all duration-500 ease-out`} style={{
                   transitionProperty:'opacity', 
                 }}>
-          {answer.error ? '' : 'Here are some of the papers you can go through:'}
+          {answer.error ? '' : 'No of paper is limited to 1-2 because of high response time from the model:'}
         </h2>
         <p className="font-mono flex justify-center">
           {answer.error ? answer.error : ''}
