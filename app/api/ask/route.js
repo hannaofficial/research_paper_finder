@@ -30,7 +30,7 @@ If not about  research paper related  to science,biology,math,physics,chemistry,
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 110000); 
+    const timeoutId = setTimeout(() => controller.abort(), 175500); 
     const result = await model.generateContent({
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       generationConfig,

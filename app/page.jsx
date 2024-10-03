@@ -21,6 +21,9 @@ export default function Home() {
   const [error, setError] = useState(null);
   const [isFormShifted, setIsFormShifted] = useState(false);
   const [showAnswers, setShowAnswers] = useState(false);
+  const resetToDefault = () => {
+    setQuestion(DEFAULT_QUESTION);
+  };
 
   const router = useRouter(); 
   const handleGoHome = (e) => {
@@ -47,24 +50,28 @@ export default function Home() {
     setAnswer(null);
 
     try {
-      const response = await axios.post('/api/ask', { question },{timeout:120000});
+      const response = await axios.post('/api/ask', { question }, {
+        timeout: 180000 // 2 minutes
+      });
       setAnswer(response.data.answer);
     } catch (error) {
       console.error('Error:', error);
-      setError(error.response?.data?.error || 'An error occurred while fetching the answer.');
+      if (error.code === 'ECONNABORTED') {
+        setError(new Error('The request took too long to complete. Please try again or refine your search.'));
+      } else if (error.response?.status === 504) {
+        setError(new Error('The server took too long to respond. Please try again later.'));
+      } else {
+        setError(new Error(error.response?.data?.error || 'An error occurred while fetching the answer.'));
+      }
     } finally {
       setIsLoading(false);
     }
   };
 
-  const resetToDefault = () => {
-    setQuestion(DEFAULT_QUESTION);
-  };
-
   if (error) {
     return (
       <div className='text-base sm:text-2xl font-mono flex flex-col mx-auto text-center justify-center items-center min-h-screen w-[80%]'>
-        <p>{error}</p>
+        <p>{error.message}</p>
         <p>The Gemini model API might be experiencing high traffic. Please try again later or refine your search query.</p>
         <div className='flex justify-center items-center mt-4'>
           <button onClick={() => setError(null)} className='text-blue-600 hover:underline mr-4'>
@@ -77,6 +84,9 @@ export default function Home() {
       </div>
     );
   }
+  
+
+  
 
   return (
     <div
