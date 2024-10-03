@@ -75,7 +75,7 @@ export default function Home() {
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
                         placeholder="Ex: gpt"
-                        className=" w-[20rem]  sm:w-[30rem] md:w-[40rem] lg:w-[50rem] p-4 pr-12 h-10 sm:h-14 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
+                        className=" w-[16rem]  sm:w-[24rem] md:w-[40rem] lg:w-[50rem] p-4 pr-12 h-10 sm:h-14 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
                         <button
