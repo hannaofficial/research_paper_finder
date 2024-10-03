@@ -29,10 +29,14 @@ If not about  research paper related  to science,biology,math,physics,chemistry,
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 110000); 
     const result = await model.generateContent({
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       generationConfig,
-    });
+    }, { signal: controller.signal });
+
+    clearTimeout(timeoutId);
 
     const responseText = result.response.text();
     console.log("Raw response:", responseText);  

@@ -47,7 +47,7 @@ export default function Home() {
     setAnswer(null);
 
     try {
-      const response = await axios.post('/api/ask', { question });
+      const response = await axios.post('/api/ask', { question },{timeout:120000});
       setAnswer(response.data.answer);
     } catch (error) {
       console.error('Error:', error);
@@ -65,10 +65,13 @@ export default function Home() {
     return (
       <div className='text-base sm:text-2xl font-mono flex flex-col mx-auto text-center justify-center items-center min-h-screen w-[80%]'>
         <p>{error}</p>
-        <p>Because of high time request of Gemini model API it is showing an error. Just search for: one research paper for Transformer</p>
-        <div className='flex justify-center items-center'>
+        <p>The Gemini model API might be experiencing high traffic. Please try again later or refine your search query.</p>
+        <div className='flex justify-center items-center mt-4'>
+          <button onClick={() => setError(null)} className='text-blue-600 hover:underline mr-4'>
+            Try Again
+          </button>
           <button onClick={handleGoHome} className='text-blue-600 hover:underline'>
-            Go to home
+            Go to Home
           </button>
         </div>
       </div>
