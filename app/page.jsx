@@ -28,12 +28,12 @@ export default function Home() {
   const router = useRouter(); 
   const handleGoHome = (e) => {
     e.preventDefault()
-    router.push('/'); // Navigate to the home page
+    router.push('/'); 
   };
 
   useEffect(() => {
     if (answer) {
-      setTimeout(() => setShowAnswers(true), 100); // Delay before showing the answers to allow smooth transition
+      setTimeout(() => setShowAnswers(true), 100); 
     }
   }, [answer]);
 

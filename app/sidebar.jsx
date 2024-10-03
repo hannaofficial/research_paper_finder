@@ -15,7 +15,7 @@ const Sidebar = () => {
     const { isSidebarVisible, toggleSidebar } = sidebarContext;
 
     if (!sidebarContext) {
-        return null; // or some fallback UI
+        return null; 
     }
 
     return (
