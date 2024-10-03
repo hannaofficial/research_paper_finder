@@ -13,10 +13,10 @@ function cleanResponse(text) {
 
 export async function POST(request) {
   const generationConfig = {
-    temperature: 1,
-    topP: 0.95,
-    topK: 64,
-    maxOutputTokens: 8192,
+    temperature: 0.8,
+    topP: 0.8,
+    topK: 56,
+    maxOutputTokens: 7000,
   };
 
   const { question } = await request.json();
