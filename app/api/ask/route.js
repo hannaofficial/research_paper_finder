@@ -13,9 +13,9 @@ function cleanResponse(text) {
 
 export async function POST(request) {
   const generationConfig = {
-    temperature: 0.9,
-    topP: 0.8,
-    topK: 56,
+    temperature: 1.1,
+    topP: 0.9,
+    topK: 61,
     maxOutputTokens: 8000,
   };
 

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { IoIosLink } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbLoader2 } from "react-icons/tb";
 
 function ResearchCard({ paper,onDelete }) {
 
@@ -117,7 +118,9 @@ function ResearchCard({ paper,onDelete }) {
           onClick={handleDeleteClick} disabled={isLoading}
           className={`transition-opacity ${isLoading ? 'opacity-50' : ''}`}
         >
-          <RiDeleteBin6Line className='sm:w-6 sm:h-6 w-4 h-4 text-neutral-400 hover:text-red-400' />
+          {isLoading?<TbLoader2 className='sm:w-6 sm:h-6 w-6 h-6'/>:<RiDeleteBin6Line className='sm:w-6 sm:h-6 w-4 h-4 text-neutral-400 hover:text-red-400' />}
+          
+
         </button>:<button 
               onClick={handleBookmarkClick} 
               disabled={isLoading}
