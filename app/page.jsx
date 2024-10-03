@@ -52,6 +52,8 @@ export default function Home() {
     setQuestion(DEFAULT_QUESTION);
   };
 
+  if (error) return <p className='text-2xl font-mono flex justify-center items-center'>Because of high time request of gemini model it is showing error try for just one research paper or type give me just one research paper for this topic</p>
+
   return (
     <div
     className={`relative container overflow-y-auto mx-auto min-h-screen p-4 flex flex-col items-center transition-all duration-500 ease-in-out`}
@@ -74,7 +76,7 @@ export default function Home() {
                         type="text"
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
-                        placeholder="Ex: gpt"
+                        placeholder="Ex: Transformer"
                         className=" w-[16rem]  sm:w-[24rem] md:w-[40rem] lg:w-[50rem] p-4 pr-12 h-10 sm:h-14 text-neutral-300  bg-[#202222] border border-gray-600 rounded-md outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
