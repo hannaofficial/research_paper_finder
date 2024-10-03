@@ -89,7 +89,7 @@ export async function GET(request) {
     client = await connectDB();
 
     
-    const result = await client.query('SELECT * FROM bookmarks');
+    const result = await client.query('SELECT * FROM bookmarks ORDER BY created_at DESC');
 
     
     return NextResponse.json({
