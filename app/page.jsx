@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiSearch } from 'react-icons/fi';
 import ResearchCard from './components/researchCard';
+import { useRouter } from 'next/navigation';
+
 
 
 import Skeleton from 'react-loading-skeleton';
@@ -19,6 +21,12 @@ export default function Home() {
   const [error, setError] = useState(null);
   const [isFormShifted, setIsFormShifted] = useState(false);
   const [showAnswers, setShowAnswers] = useState(false);
+
+  const router = useRouter(); 
+  const handleGoHome = (e) => {
+    e.preventDefault()
+    router.push('/'); // Navigate to the home page
+  };
 
   useEffect(() => {
     if (answer) {
@@ -53,7 +61,19 @@ export default function Home() {
     setQuestion(DEFAULT_QUESTION);
   };
 
-  if (error) return <p className='text-base sm:text-2xl font-mono flex flex-col mx-auto text-center justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer <p className='flex justify-center items-center'><Link href='/' className='text-blue-600'>Go to home</Link></p> </p>
+  if (error) {
+    return (
+      <div className='text-base sm:text-2xl font-mono flex flex-col mx-auto text-center justify-center items-center min-h-screen w-[80%]'>
+        <p>{error}</p>
+        <p>Because of high time request of Gemini model API it is showing an error. Just search for: one research paper for Transformer</p>
+        <div className='flex justify-center items-center'>
+          <button onClick={handleGoHome} className='text-blue-600 hover:underline'>
+            Go to home
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
