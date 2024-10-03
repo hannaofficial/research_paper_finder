@@ -77,9 +77,7 @@ export default function Home() {
           <button onClick={() => setError(null)} className='text-blue-600 hover:underline mr-4'>
             Try Again
           </button>
-          <button onClick={handleGoHome} className='text-blue-600 hover:underline'>
-            Go to Home
-          </button>
+          
         </div>
       </div>
     );
