@@ -21,7 +21,7 @@ export async function POST(request) {
 
   const { question } = await request.json();
   const prompt = `Provide 1-2 max foundational research papers on: ${question} such that I can understand the everything about the topic
-Return as JSON array: [{name, author, published_date, citation, importance, link ,icon of the website}]
+Return as JSON array: [{name, author, published_date, citation, importance, link }]
 If not about  research paper related  to science,biology,math,physics,chemistry,economics,AI,CS,finance,engineering, return {"error": "Invalid query. Ask about edu research in specified fields."}`;
 
 
