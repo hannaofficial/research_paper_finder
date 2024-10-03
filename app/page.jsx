@@ -8,6 +8,7 @@ import ResearchCard from './components/researchCard';
 import Skeleton from 'react-loading-skeleton';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
+import Link from 'next/link';
 
 const DEFAULT_QUESTION = "";
 
@@ -52,7 +53,7 @@ export default function Home() {
     setQuestion(DEFAULT_QUESTION);
   };
 
-  if (error) return <p className='text-2xl font-mono flex justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer </p>
+  if (error) return <p className='text-base sm:text-2xl font-mono flex justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer <p className='flex justify-center items-center'><Link href='/'>Go to home</Link></p> </p>
 
   return (
     <div
