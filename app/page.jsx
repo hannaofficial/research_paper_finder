@@ -52,7 +52,7 @@ export default function Home() {
     setQuestion(DEFAULT_QUESTION);
   };
 
-  if (error) return <p className='text-2xl font-mono flex justify-center items-center'>Because of high time request of gemini model it is showing error try for just one research paper or type give me just one research paper for this topic</p>
+  if (error) return <p className='text-2xl font-mono flex justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer </p>
 
   return (
     <div
