@@ -53,7 +53,7 @@ export default function Home() {
     setQuestion(DEFAULT_QUESTION);
   };
 
-  if (error) return <p className='text-base sm:text-2xl font-mono flex justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer <p className='flex justify-center items-center'><Link href='/'>Go to home</Link></p> </p>
+  if (error) return <p className='text-base sm:text-2xl font-mono flex flex-col mx-auto text-center justify-center items-center min-h-screen w-[80%]'>Because of high time request of gemini model api it is showing error Just search : one research paper for Transformer <p className='flex justify-center items-center'><Link href='/' className='text-blue-600'>Go to home</Link></p> </p>
 
   return (
     <div
