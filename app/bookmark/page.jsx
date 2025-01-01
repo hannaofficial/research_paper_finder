@@ -38,7 +38,7 @@ export default function BookmarkList() {
   };
 
   
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <div className='flex justify-center items-center'>Error: {error} <p>AWS storage is not connected now due to lack of money</p>  </div>;
   if (loading) return <div className='flex justify-center items-center min-h-screen'><ImSpinner2 className='w-12 h-12 animate-spin text-neutral-400'/></div>
   return (
     <div className='flex flex-col items-center justify-center max-w-[100%] sm:max-w-[70%]  mx-auto mt-20'>
