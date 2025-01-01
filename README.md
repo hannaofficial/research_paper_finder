@@ -3,12 +3,12 @@
 
 ## About the project
 
-This project is about finding good research paper using gemini flash model and save it to your local storage
+* This project is about finding good research paper using gemini flash model and save it to your local storage
 
-for now bookmarks will not work because I disconnect it with aws because of subscription fee
+* For now bookmarks will not work because I disconnect it with aws because of subscription fee
 
-I have created in just one day that why the look might not be fancy
-You can try it by following below details
+* I have created in just one day that why the look might not be fancy
+  You can try it by following below details
 
 
 
